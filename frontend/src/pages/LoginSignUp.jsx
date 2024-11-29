@@ -36,7 +36,6 @@ const LoginSignUp = () => {
 
     const SubmitFromHander = async (e) => {
         e.preventDefault()
-        console.log(input)
         const form = new FormData()
         form.append("fullname", input.fullname)
         form.append("email", input.email)
