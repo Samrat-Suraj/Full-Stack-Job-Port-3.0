@@ -8,7 +8,7 @@ const useGetAllCompanies = () => {
     useEffect(()=>{
         const featchAllCompany = async () =>{
             try {
-                const res = await axios.get("http://localhost:5000/api/company/getcompany" , {withCredentials : true})
+                const res = await axios.get("https://full-stack-job-port-3-0.onrender.com/api/company/getcompany" , {withCredentials : true})
                 if(res.data.success){
                     dispatch(setAllCampanies(res.data.companies))
                 }

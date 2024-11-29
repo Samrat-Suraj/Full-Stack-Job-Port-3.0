@@ -50,7 +50,7 @@ const LoginSignUp = () => {
         try {
             setLading(true)
             if (currState === "SignUp") {
-                const res = await axios.post("http://localhost:5000/api/user/register", form, {
+                const res = await axios.post("https://full-stack-job-port-3-0.onrender.com/api/user/register", form, {
                     headers: {
                         "Content-Type": "multipart/form-data"
                     },

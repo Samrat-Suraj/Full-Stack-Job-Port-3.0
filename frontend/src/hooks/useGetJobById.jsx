@@ -9,7 +9,7 @@ const useGetJobById = (jobId) => {
     useEffect(()=>{
         const featchGetJobById = async () =>{
             try {
-                const res = await axios.get(`http://localhost:5000/api/job/${jobId}` , {withCredentials : true})
+                const res = await axios.get(`https://full-stack-job-port-3-0.onrender.com/api/job/${jobId}` , {withCredentials : true})
                 if(res.data.success){
                     dispatch(setSingleJobs(res.data.job))
                 }
