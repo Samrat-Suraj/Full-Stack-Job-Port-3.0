@@ -49,7 +49,7 @@ const LoginSignUp = () => {
         try {
             setLading(true)
             if (currState === "SignUp") {
-                const res = await axios.post("http://localhost:5000/api/user/register", form, {
+                const res = await axios.post("https://job-port-dryp.onrender.com/api/user/register", form, {
                     headers: {
                         "Content-Type": "multipart/form-data"
                     },
@@ -61,7 +61,7 @@ const LoginSignUp = () => {
                     toast.success(res?.data?.message)
                 }
             }else{
-                const res = await axios.post("http://localhost:5000/api/user/login", input, {
+                const res = await axios.post("https://job-port-dryp.onrender.com/api/user/login", input, {
                     headers: {
                         "Content-Type": "application/json"
                     },

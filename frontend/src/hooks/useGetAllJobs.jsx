@@ -10,7 +10,7 @@ const useGetAllJobs = () => {
     useEffect(() => {
         const fetchAllJobs = async () => {
             try {
-                const res = await axios.get(`http://localhost:5000/api/job/all?keyword=${globeSearchJobQuery}`, { withCredentials: true });
+                const res = await axios.get(`https://job-port-dryp.onrender.com/api/job/all?keyword=${globeSearchJobQuery}`, { withCredentials: true });
                 if (res.data.success) {
                     dispatch(setAllJobs(res?.data?.jobs));
                 }

@@ -27,7 +27,7 @@ const ApplicantsTable = () => {
 
     const statusHandler = async (status , applicantId) =>{
         try {
-            const res = await axios.post(`http://localhost:5000/api/application/status/${applicantId}/update` , {status} , {withCredentials : true})
+            const res = await axios.post(`https://job-port-dryp.onrender.com/api/application/status/${applicantId}/update` , {status} , {withCredentials : true})
             if(res.data.success){
                 toast.success(res?.data?.message)
             }

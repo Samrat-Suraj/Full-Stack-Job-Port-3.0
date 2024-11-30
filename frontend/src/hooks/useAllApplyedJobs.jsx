@@ -8,7 +8,7 @@ const useAllApplyedJobs = () => {
     useEffect(() => {
         const fetchAppliedJobs = async () => {
             try {
-                const res = await axios.get("http://localhost:5000/api/application/get", { withCredentials: true })
+                const res = await axios.get("https://job-port-dryp.onrender.com/api/application/get", { withCredentials: true })
                 if (res.data.success) {
                     dispatch(setUserAppliedJobs(res?.data?.applications))
                 }

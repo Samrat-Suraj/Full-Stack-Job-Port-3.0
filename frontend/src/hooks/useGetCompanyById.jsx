@@ -8,7 +8,7 @@ const useGetCompanyById = (companyId) => {
     useEffect(()=>{
         const getSingleCompany = async () =>{
             try {
-                const res = await axios.get(`http://localhost:5000/api/company/getcompany/${companyId}` , {withCredentials : true})
+                const res = await axios.get(`https://job-port-dryp.onrender.com/api/company/getcompany/${companyId}` , {withCredentials : true})
                 if(res.data.success){
                     dispatch(setSingleCompany(res.data.company))
                 }

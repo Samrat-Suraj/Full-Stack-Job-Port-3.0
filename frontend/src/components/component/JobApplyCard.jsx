@@ -26,7 +26,7 @@ const JobApplyCard = () => {
 
     const JobApplyHander = async () => {
         try {
-            const res = await axios.post(`http://localhost:5000/api/application/apply/${params.id}`, {}, { withCredentials: true })
+            const res = await axios.post(`https://job-port-dryp.onrender.com/api/application/apply/${params.id}`, {}, { withCredentials: true })
             if (res.data.success) {
                 toast.success(res?.data?.message)
                 setHasApplied(true)

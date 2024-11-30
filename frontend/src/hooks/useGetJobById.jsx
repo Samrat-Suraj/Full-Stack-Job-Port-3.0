@@ -9,9 +9,9 @@ const useGetJobById = (jobId) => {
     useEffect(()=>{
         const featchGetJobById = async () =>{
             try {
-                const res = await axios.get(`http://localhost:5000/api/job/${jobId}` , {withCredentials : true})
+                const res = await axios.get(`https://job-port-dryp.onrender.com/api/job/${jobId}` , {withCredentials : true})
                 if(res.data.success){
-                    dispatch(setSingleJobs(res?.data?.job))
+                    dispatch(setSingleJobs(res?.data.job))
                 }
             } catch (error) {
                 console.log(error)
