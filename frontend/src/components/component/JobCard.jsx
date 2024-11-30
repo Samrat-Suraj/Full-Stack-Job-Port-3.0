@@ -6,8 +6,18 @@ import { useSelector } from 'react-redux';
 const JobCard = ({ jobs }) => {
     const {user} = useSelector(store => store.auth)
     const navigate = useNavigate()
+
+        const handleJobClick = () => {
+        if (!user) {
+            navigate('/auth');
+        } else {
+            navigate(`/jobs/${jobs?._id}`);
+        }
+    };
+
+    
     return (
-        <div onClick={()=> navigate(`/jobs/${jobs?._id}`)} className="bg-white cursor-pointer dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out">
+        <div onClick={handleJobClick} className="bg-white cursor-pointer dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out">
             <h2 className="text-xl font-bold text-gray-800 dark:text-white mb-2">{jobs?.company?.name}</h2>
             <h2 className="text-xl font-semibold text-gray-800 dark:text-white mb-2">{jobs?.title}</h2>
             <h3 className="text-[13px] text-gray-600 dark:text-gray-400 mb-4">{jobs?.location}</h3>
