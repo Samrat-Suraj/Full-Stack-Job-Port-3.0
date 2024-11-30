@@ -15,16 +15,16 @@ const Footer = () => {
                         <h3 className="text-2xl font-bold mb-2">CareerLinker</h3>
                         <p className="text-sm mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
                         <div className="flex gap-4 mt-7">
-                            <a href="#" className="text-white hover:text-blue-500 transition-colors duration-200">
+                            <a href="https://www.linkedin.com/in/sooraj-mourya/" className="text-white hover:text-blue-500 transition-colors duration-200">
                                 <Facebook size={24} />
                             </a>
-                            <a href="#" className="text-white hover:text-pink-500 transition-colors duration-200">
+                            <a href="https://www.linkedin.com/in/sooraj-mourya/" className="text-white hover:text-pink-500 transition-colors duration-200">
                                 <Instagram size={24} />
                             </a>
-                            <a href="#" className="text-white hover:text-blue-400 transition-colors duration-200">
+                            <a href="https://www.linkedin.com/in/sooraj-mourya/" className="text-white hover:text-blue-400 transition-colors duration-200">
                                 <Twitter size={24} />
                             </a>
-                            <a href="#" className="text-white hover:text-blue-700 transition-colors duration-200">
+                            <a href="https://www.linkedin.com/in/sooraj-mourya/" className="text-white hover:text-blue-700 transition-colors duration-200">
                                 <Linkedin size={24} />
                             </a>
                         </div>
