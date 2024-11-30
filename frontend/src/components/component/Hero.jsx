@@ -5,6 +5,7 @@ const Hero = () => {
     const navigate = useNavigate()
     const [currentText, setCurrentText] = useState(0);
     const [isFading, setIsFading] = useState(false);
+    const {user} = useSelector(store => store.auth)
 
     const jobTexts = [
         { title: 'Find Your Dream Job Today', description: 'Join top employers and discover exciting opportunities. Your next career is just a click away!' },
@@ -26,6 +27,14 @@ const Hero = () => {
         return () => clearInterval(interval);
     }, []);
 
+    const handleJobClick = () => {
+        if (!user) {
+            navigate('/auth');
+        } else {
+            navigate(`/jobs`);
+        }
+    };
+
     return (
         <div className="h-[53vh] sm:h-[60vh] md:h-[44vh] lg:h-[80vh] xl:h-[80vh] mt-4 bg-gradient-to-r from-sky-400 to-teal-500 text-white dark:from-gray-900 dark:to-gray-700">
             <div className="h-full w-full flex justify-center items-center">
@@ -41,7 +50,7 @@ const Hero = () => {
                         >
                             {jobTexts[currentText].description}
                         </p>
-                        <button onClick={()=> navigate("/jobs")} className="mt-6 text-center py-3 px-6 bg-yellow-500 text-black font-semibold rounded-lg hover:bg-yellow-400 dark:bg-yellow-400 dark:text-black dark:hover:bg-yellow-500">
+                        <button onClick={handleJobClick} className="mt-6 text-center py-3 px-6 bg-yellow-500 text-black font-semibold rounded-lg hover:bg-yellow-400 dark:bg-yellow-400 dark:text-black dark:hover:bg-yellow-500">
                             Get Started
                         </button>
                     </div>
