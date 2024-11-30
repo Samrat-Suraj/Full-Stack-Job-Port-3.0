@@ -9,7 +9,7 @@ const ProtectRoute = ({ children }) => {
 
     useEffect(() => {
         if (user === null || user.role !== "admin") {
-            navigate("/")
+            navigate("/auth")
         }
     }, [])
 
