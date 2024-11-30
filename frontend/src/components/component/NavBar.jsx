@@ -49,14 +49,14 @@ const NavBar = () => {
 
     const logOutHander = async () => {
         try {
-            const res = await axios.post("https://full-stack-job-port-3-0.onrender.com/api/user/logout", {}, { withCredentials: true })
+            const res = await axios.post("http://localhost:5000/api/user/logout", {}, { withCredentials: true })
             if (res.data.success) {
                 navigate("/auth")
                 dispatch(setUser(""))
-                toast.success(res.data.message)
+                toast.success(res?.data?.message)
             }
         } catch (error) {
-            toast.success(error.response.data.message)
+            toast.success(error?.response?.data?.message)
         }
     }
 

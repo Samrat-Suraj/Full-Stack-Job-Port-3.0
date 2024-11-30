@@ -49,7 +49,7 @@ const LoginSignUp = () => {
         try {
             setLading(true)
             if (currState === "SignUp") {
-                const res = await axios.post("https://full-stack-job-port-3-0.onrender.com/api/user/register", form, {
+                const res = await axios.post("http://localhost:5000/api/user/register", form, {
                     headers: {
                         "Content-Type": "multipart/form-data"
                     },
@@ -58,7 +58,7 @@ const LoginSignUp = () => {
                 if (res.data.success) {
                     navigate("/")
                     dispatch(setUser(res.data.user))
-                    toast.success(res.data.message)
+                    toast.success(res?.data?.message)
                 }
             }else{
                 const res = await axios.post("http://localhost:5000/api/user/login", input, {
@@ -70,11 +70,11 @@ const LoginSignUp = () => {
                 if (res.data.success) {
                     navigate("/")
                     dispatch(setUser(res.data.user))
-                    toast.success(res.data.message)
+                    toast.success(res?.data?.message)
                 }
             }
         } catch (error) {
-            toast.success(error.response.data.message)
+            toast.success(error?.response?.data?.message)
         } finally {
             setLading(false)
         }

@@ -8,9 +8,9 @@ const useAllApplicant = (jobId) => {
     useEffect(()=>{
         const fatchAplicantsData  = async () =>{
             try {
-                const res = await axios.get(`https://full-stack-job-port-3-0.onrender.com/api/application/${jobId}/applicants` , {withCredentials : true})
+                const res = await axios.get(`http://localhost:5000/api/application/${jobId}/applicants` , {withCredentials : true})
                 if(res.data.success){
-                    dispatch(setAllApplicant(res.data.job))
+                    dispatch(setAllApplicant(res?.data?.job))
                 }
 
             } catch (error) {

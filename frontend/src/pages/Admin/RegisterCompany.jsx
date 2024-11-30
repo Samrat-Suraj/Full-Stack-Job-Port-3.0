@@ -17,16 +17,16 @@ const RegisterCompany = () => {
     }
     const OnClickHander = async () =>{
         try {
-            const res = await axios.post("https://full-stack-job-port-3-0.onrender.com/register" , input , {
+            const res = await axios.post("http://localhost:5000/register" , input , {
                 withCredentials : true
             })
             if(res.data.success){
                 const id = res?.data?.company?._id
                 navigate(`/admin/companies/${id}/update`)
-                toast.success(res.data.message)
+                toast.success(res?.data?.message)
             }
         } catch (error) {
-            toast.error(error.response.data.message)
+            toast.error(error?.response?.data?.message)
         }
     }
 

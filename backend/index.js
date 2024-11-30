@@ -17,7 +17,7 @@ app.use(cookieParser())
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.use(cors({
-    origin: "https://full-stack-job-port-3-0.onrender.com",
+    origin: "http://localhost:3000",
     credentials: true
 }))
 

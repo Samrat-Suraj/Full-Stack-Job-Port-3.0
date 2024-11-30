@@ -54,7 +54,7 @@ const UpdateCompanyDetails = () => {
 
         try {
             setLoading(true)
-            const res = await axios.put(`https://full-stack-job-port-3-0.onrender.com/api/company/update/${params.id}`, form, {
+            const res = await axios.put(`http://localhost:5000/api/company/update/${params.id}`, form, {
                 headers: {
                     "Content-Type": "multipart/form-data"
                 },
@@ -62,10 +62,10 @@ const UpdateCompanyDetails = () => {
             })
             if (res.data.success) {
                 navigate(`/admin/companies`)
-                toast.success(res.data.message)
+                toast.success(res?.data?.message)
             }
         } catch (error) {
-            toast.error(error.response.data.message)
+            toast.error(error?.response?.data?.message)
         } finally {
             setLoading(false)
         }

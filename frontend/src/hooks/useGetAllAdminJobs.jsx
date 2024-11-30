@@ -8,9 +8,9 @@ const useGetAllAdminJobs = () => {
     useEffect(()=>{
         const featchAllJobs = async () =>{
             try {
-                const res = await axios.get("https://full-stack-job-port-3-0.onrender.com/api/job/getadminjobs" , {withCredentials : true})
+                const res = await axios.get("http://localhost:5000/api/job/getadminjobs" , {withCredentials : true})
                 if(res.data.success){
-                    dispatch(setAdminJobs(res.data.jobs))
+                    dispatch(setAdminJobs(res?.data?.jobs))
                 }
             } catch (error) {
                 console.log(error)

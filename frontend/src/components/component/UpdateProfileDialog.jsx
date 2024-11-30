@@ -56,7 +56,7 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
         try {
 
             setLoading(true)
-            const res = await axios.post("https://full-stack-job-port-3-0.onrender.com/api/user/profile/update" , form , {
+            const res = await axios.post("http://localhost:5000/api/user/profile/update" , form , {
                 headers : {
                     "Content-Type" : "multipart/form-data"
                 },
@@ -66,10 +66,10 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
             if(res.data.success){
                 setOpen(false)
                 dispatch(setUser(res.data.user))
-                toast.success(res.data.message)
+                toast.success(res?.data?.message)
             }
         } catch (error) {
-            toast.error(error.response.data.message)
+            toast.error(error?.response?.data?.message)
         }finally{
             setLoading(false)
         }

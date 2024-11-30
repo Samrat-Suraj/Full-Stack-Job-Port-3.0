@@ -31,7 +31,7 @@ const PostJobs = () => {
         e.preventDefault()
         try {
             setLoading(true)
-            const res = await axios.post("https://full-stack-job-port-3-0.onrender.com/api/job/postjob", input, {
+            const res = await axios.post("http://localhost:5000/api/job/postjob", input, {
                 headers: {
                     "Content-Type": "application/json"
                 },
@@ -39,10 +39,10 @@ const PostJobs = () => {
             })
             if (res.data.success) {
                 navigate("/admin/jobs")
-                toast.success(res.data.message)
+                toast.success(res?.data?.message)
             }
         } catch (error) {
-            toast.error(error.response.data.message)
+            toast.error(error?.response?.data?.message)
         } finally {
             setLoading(false)
         }

@@ -27,12 +27,12 @@ const ApplicantsTable = () => {
 
     const statusHandler = async (status , applicantId) =>{
         try {
-            const res = await axios.post(`https://full-stack-job-port-3-0.onrender.com/api/application/status/${applicantId}/update` , {status} , {withCredentials : true})
+            const res = await axios.post(`http://localhost:5000/api/application/status/${applicantId}/update` , {status} , {withCredentials : true})
             if(res.data.success){
-                toast.success(res.data.message)
+                toast.success(res?.data?.message)
             }
         } catch (error) {
-            toast.error(error.response.data.message)
+            toast.error(error?.response?.data?.message)
         }
     }
 
