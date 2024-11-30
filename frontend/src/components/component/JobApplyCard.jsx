@@ -21,7 +21,7 @@ const JobApplyCard = () => {
 
 
     useEffect(()=>{
-        setHasApplied(singleJobs?.applications?.some(application => application.applicant === user._id))
+        setHasApplied(singleJobs?.applications?.some(application => application?.applicant === user._id))
     },[params.id, dispatch, user?._id])
 
     const JobApplyHander = async () => {
@@ -106,7 +106,7 @@ const JobApplyCard = () => {
                     <FaCalendarAlt /> Experience Level: <span className="font-normal text-gray-600 dark:text-gray-300">{singleJobs?.experienceLevel}</span>
                 </p>
                 <p className="font-semibold text-gray-800 dark:text-white flex items-center gap-2">
-                    <FaUsers /> Total Applicants: <span className="font-normal text-gray-600 dark:text-gray-300">{singleJobs?.applications.length}</span>
+                    <FaUsers /> Total Applicants: <span className="font-normal text-gray-600 dark:text-gray-300">{singleJobs?.applications?.length}</span>
                 </p>
                 <p className="font-semibold text-gray-800 dark:text-white flex items-center gap-2">
                     <FaUsers /> Available Positions: <span className="font-normal text-gray-600 dark:text-gray-300">{singleJobs?.position}</span>
