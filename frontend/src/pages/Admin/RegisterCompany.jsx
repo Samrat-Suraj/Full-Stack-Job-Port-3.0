@@ -17,7 +17,7 @@ const RegisterCompany = () => {
     }
     const OnClickHander = async () =>{
         try {
-            const res = await axios.post("https://job-port-dryp.onrender.com/register" , input , {
+            const res = await axios.post("https://job-port-dryp.onrender.com/company/register" , input , {
                 withCredentials : true
             })
             if(res?.data?.success){
