@@ -20,7 +20,7 @@ const RegisterCompany = () => {
             const res = await axios.post("https://job-port-dryp.onrender.com/api/company/register" , input , {
                 withCredentials : true
             })
-            console.log(res)
+            
             if(res?.data?.success){
                 const id = res?.data?.company?._id
                 navigate(`/admin/companies/${id}/update`)
